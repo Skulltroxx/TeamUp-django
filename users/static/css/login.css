@@ -1,0 +1,18 @@
+ul.errorlist {
+    background-color: rgb(249, 162, 162);
+    color: rgb(175, 77, 77);
+    border-radius: 4px;
+    display: flex;
+    font-weight: bold;
+    padding-bottom: 2px;
+    padding-top: 2px;
+}
+
+#id_username, #id_password{
+    width: 100%;
+    display: block;
+}
+
+#form{
+    width: 50%;
+}

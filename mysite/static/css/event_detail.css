@@ -1,0 +1,15 @@
+#content{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: larger;
+    border: solid 2px;
+    list-style: none;
+    width: 50%;
+    margin: 20px 25%;
+    padding: 15px;
+}
+
+#content #title{
+    color: blue;
+    font-size: x-large;
+    font-weight: bold;
+}

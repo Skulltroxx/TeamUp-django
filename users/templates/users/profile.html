@@ -1,0 +1,9 @@
+{% extends 'mysite/base.html' %} {% block heads %} {% load static %}
+{% endblock heads %}
+{% block content %}
+    <div class='pt-2'></div>
+    <div class="content-section container border rounded" id="form">        
+        <h2  class="account-heading"> {{ user.username}} </h2>
+        <p class="text-secondary"> {{ user.email }} </p>
+    </div>
+{% endblock content %}

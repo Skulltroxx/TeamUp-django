@@ -1,0 +1,22 @@
+{% extends 'mysite/base.html' %} {% block heads %} {% load static %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}" />
+{% endblock heads %} {% block content %}
+<div class='pt-2'></div>
+<div class="content-section container border rounded" id="form">
+  <form method="post">
+    {% csrf_token %} 
+    <fieldset class="form-group">
+      <legend class="border-bottom mb-4">Log In</legend>
+      {{ form.as_p }}
+    </fieldset>
+    <div class="form-group">
+      <button class="btn btn-primary" type="submit">Login</button>
+    </div>
+  </form>
+  <div class="border-top pt-2 pb-2">
+    <small class="text-muted">
+      Need an account? <a class="ml-1" href="{% url 'site-register' %}">Register</a>
+    </small>
+  </div>
+</div>
+{% endblock content %}

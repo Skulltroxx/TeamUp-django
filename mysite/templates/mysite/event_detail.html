@@ -1,0 +1,37 @@
+{% extends 'mysite/base.html' %}
+{% block heads %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/event_detail.css' %}" />
+{% endblock heads %}
+{% block content %}
+<div id='content'>
+    <h2>{{object.sport}} on {{object.date|date:"d F, Y"}}</h2>
+    <div>
+        <ul>
+            <li>
+                Place - {{object.arena.title}}
+            </li>
+            <li>
+                Number of Players - {{object.players.distinct.count}}
+            </li>
+            <li>
+                Players:
+                <ul>
+                    {% for player in object.players.all %}
+                        <li>
+                            {{ player.username }}
+                        </li>
+                    {% endfor %}
+                </ul>
+            </li>
+        </ul>
+        {% if user.is_authenticated %}
+            {% if user in object.players.all %}
+                <a class='btn btn-secondary btn-sm mt-1 mb-1' href="{% url 'event-update' object.id %}">Update</a>
+            {% else %}
+                <a class='btn btn-success btn-sm mt-1 mb-1' href="{% url 'join-event' object.id %}">Join</a>
+            {% endif %}
+        {% endif %}
+    </div>
+</div>
+{% endblock content %}

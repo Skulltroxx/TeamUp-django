@@ -1,0 +1,15 @@
+.container{
+    width: 50%;
+}
+
+small a{
+    border-radius: 5px;
+    padding: 5px 5px;
+}
+
+small a:hover{
+    text-decoration: none !important;
+    background-color: #0082e6;
+    color: white;
+    transition: 0.5s;
+}

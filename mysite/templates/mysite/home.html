@@ -1,0 +1,25 @@
+{% extends 'mysite/base.html' %}
+{% block heads %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}" />
+{% endblock heads %}
+{% block content %}
+{% for e in events%}
+<div id='content'>
+    <div id="title">
+        <a href="{% url 'event-detail' e.id %}">{{e.sport}} on {{e.date|date:"d F, Y"}}</a>
+    </div>
+    <ul>
+        <li>
+            Place - {{e.arena.title}}
+        </li>
+        <li>
+            Number of Players - {{e.players.distinct.count}}
+        </li>
+    </ul>
+    {% if user.is_authenticated and not user in e.players.all %}
+        <a href="{% url 'join-event' e.id %}"><button type='submit' name='{{ e.id }}' class="btn btn-success">Join</button></a>
+    {% endif %}
+</div>
+{% endfor %}
+{% endblock content %}

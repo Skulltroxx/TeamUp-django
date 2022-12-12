@@ -1,0 +1,14 @@
+#map {
+  height: 70vh;
+  width: 768px;
+  border: solid 3px blue;
+}
+
+.lat-long{
+  list-style-type: none;
+}
+
+.errorlist{
+  display: flex;
+  justify-content: center;
+}
